@@ -1,20 +1,36 @@
+/* CSS variables */
+:root {
+    --primary-color: #4ADF86;
+    --hover-color: #0ea472;
+    --background-color: #1F2937;
+    --text-color: #FFFFFF;
+    --header-font-size: 2.5rem;
+    --body-font-size: 1.25rem;
+}
+
+/* Aligning main content div */
 body {
     display: flex;
-    height:100vh;
-    width:100vw;
+    height: 100vh;
+    width: 100vw;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     margin: 0;
-    background-color: #1F2937;
-    color: #FFFFFF;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 h1 {
     font-family: 'Karla', sans-serif;
-    font-size: 40px;
+    font-size: var(--header-font-size);
     margin: 0;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-style: normal;
 }
 
 p, button, div {
@@ -23,24 +39,30 @@ p, button, div {
 
 p {
     margin:10px 0;
-    font-size: 20px;
+    font-size: var(--body-font-size);
 }
 
 #password-section {
     margin: 51px 0 0 0;
 }
 
+#generateInput {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
 button {
-    color:#ffffff;
+    color: var(--text-color);
     background-color: #10b981c3;
     border: none;
     border-radius: 6px;
-    padding: 9px 17px 9px 15px;
+    padding: 0.8em 1.2em;
     font-size: 16px;
 }
 
 button:hover {
-    background-color: #0ea472;
+    background-color: var(--hover-color);
 }
 
 button:active {
@@ -53,13 +75,7 @@ button:active {
 }
 
 #passwords {
-    margin: 35px 0 0 0;
-    display: flex;
-    column-gap: 24px;
-}
-
-.highlight {
-    color:#4ADF86;
+    display: none;
 }
 
 .password {
