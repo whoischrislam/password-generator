@@ -1,5 +1,7 @@
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap" rel="stylesheet">
@@ -7,27 +9,29 @@
         <title>🔐 Password Generator by Chris Lam</title>
     </head>
     <body>
-        <div id="hero-text">
-            <h1><em class="highlight">🔐 Password Generator</em></h1>
-            <p>by Chris Lam</p>
-        </div>
-        <div id="password-section">
-            <div id="generateInput">
-                <label for="passwordLength">How many characters for your password?</label>
-                <input type="number" id="passwordLength" placeholder="15" min="8" step="1" value="8">
-                <div id="symbolsNumbersForm">
-                    <input type="checkbox" id="toggleSymbolsNumbers" checked>
-                    <label for="toggleSymbolsNumbers">Include symbols and numbers</label>  
+        <main>
+            <div id="hero-text">
+                <h1><em class="highlight">🔐 Password Generator</em></h1>
+                <p>by Chris Lam</p>
+            </div>
+            <div id="password-section">
+                <div id="generateInput">
+                    <label for="passwordLength">How many characters for your password?</label>
+                    <input type="number" id="passwordLength" placeholder="15" min="8" step="1" value="8">
+                    <div id="symbolsNumbersForm">
+                        <input type="checkbox" id="toggleSymbolsNumbers" checked>
+                        <label for="toggleSymbolsNumbers">Include symbols and numbers</label>  
+                    </div>
+                    <button id="generatePassword">Generate password</button>
                 </div>
-                <button id="generatePassword">Generate password</button>
+                
+                <div id="separator"></div>
+                <div id="passwords">
+                    <p>Your randomly generated password<span id="numPasswordChars"></span></p>
+                    <div id="password" class="password highlight"></div>
+                </div>
             </div>
-            
-            <div id="separator"></div>
-            <div id="passwords">
-                <p>Number of characters in your password:<span id="numPasswordChars"></span></p>
-                <div id="password" class="password highlight"></div>
-            </div>
-        </div>
-        <script src="index.js"></script>
+            <script src="index.js"></script>
+        </main>
     </body>
 </html>

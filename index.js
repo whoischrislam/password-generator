@@ -6,9 +6,9 @@ let characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","
 let password = document.getElementById("password");
 const generateBtn = document.getElementById("generatePassword");
 const passwordLength = document.getElementById("passwordLength");
-const displayPasswordLength = document.getElementById("numPasswordChars");
 const passwordArea = document.getElementById("passwords");
 const includeSymbolsNumbers = document.getElementById("toggleSymbolsNumbers");
+const seperator = document.getElementById("separator");
 // Array to store passwords
 let passwords = [];
 
@@ -21,7 +21,7 @@ passwordArea.addEventListener("click", function() {
     navigator.clipboard.writeText(password.textContent)
   .then(function() {
     // Success: the text was successfully copied
-    alert("Text copied to clipboard: " + password.textContent);
+    alert("Password copied to clipboard: " + password.textContent);
   })
   .catch(function(error) {
     // Failure: the text could not be copied
@@ -31,7 +31,7 @@ passwordArea.addEventListener("click", function() {
 
 function generatePassword () {
     passwordArea.style.display = "block";
-    displayPasswordLength.textContent = passwordLength.value;
+    seperator.style.display = "block";
     // Check if the user wants to include symbols and numbers
     if (!includeSymbolsNumbers.checked) {
         characters = characters.filter (char => char.match(/[a-zA-Z]/));
