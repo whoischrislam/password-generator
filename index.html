@@ -8,13 +8,17 @@
     </head>
     <body>
         <div id="hero-text">
-            <h1>Generate a<br/><em class="highlight">random password</em></h1>
-            <p>Never use an insecure password again.</p>
+            <h1><em class="highlight">🔐 Password Generator</em></h1>
+            <p>by Chris Lam</p>
         </div>
         <div id="password-section">
             <div id="generateInput">
-                <label for="passwordLength">Number of characters for password:</label>
+                <label for="passwordLength">How many characters for your password?</label>
                 <input type="number" id="passwordLength" placeholder="15" min="8" step="1" value="8">
+                <div id="symbolsNumbersForm">
+                    <input type="checkbox" id="toggleSymbolsNumbers" checked>
+                    <label for="toggleSymbolsNumbers">Include symbols and numbers</label>  
+                </div>
                 <button id="generatePassword">Generate password</button>
             </div>
             

@@ -1,5 +1,5 @@
 // Characters to use for password generation
-const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
+let characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
 
 // Reference for UI to insert passwords
@@ -8,6 +8,7 @@ const generateBtn = document.getElementById("generatePassword");
 const passwordLength = document.getElementById("passwordLength");
 const displayPasswordLength = document.getElementById("numPasswordChars");
 const passwordArea = document.getElementById("passwords");
+const includeSymbolsNumbers = document.getElementById("toggleSymbolsNumbers");
 // Array to store passwords
 let passwords = [];
 
@@ -31,6 +32,13 @@ passwordArea.addEventListener("click", function() {
 function generatePassword () {
     passwordArea.style.display = "block";
     displayPasswordLength.textContent = passwordLength.value;
+    // Check if the user wants to include symbols and numbers
+    if (!includeSymbolsNumbers.checked) {
+        characters = characters.filter (char => char.match(/[a-zA-Z]/));
+    } else if(includeSymbolsNumbers.checked && characters.length < 55) {
+        characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
+    }
+    
     //Resetting if there is an existing set of passwords
     if (!Array.isArray(passwords) || passwords.length) {
         passwords = [];
@@ -44,6 +52,4 @@ function generatePassword () {
     // Push the password into the password array
     passwords.push(passwordGen); 
     password.textContent = passwords[0];
-    //Checking passwords stored in the array
-    console.log(passwords);
 }
