@@ -1,7 +1,8 @@
 /* CSS variables */
 :root {
     --primary-color: #AEADF0;
-    --hover-color: #D8DCFF;
+    --button-color: #7b79da;
+    --hover-color: #615fd6;
     --background-color: #1F2937;
     --text-color: #FFFFFF;
     --header-font-size: 2.5rem;
@@ -19,6 +20,16 @@ body {
     margin: 0 1em;
     align-items: center;
     justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:visited {
+    text-decoration: none;
+    color: var(--button-color);
 }
 
 h1 {
@@ -49,7 +60,7 @@ p {
 
 button {
     color: var(--text-color);
-    background-color: var(--primary-color);
+    background-color: var(--button-color);
     border: none;
     border-radius: var(--border-radius);
     padding: 0.8em 1.2em;
